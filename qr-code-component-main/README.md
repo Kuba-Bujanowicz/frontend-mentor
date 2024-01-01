@@ -26,7 +26,7 @@
 
 ### Useful resources
 
-- [What Unit](https://whatunit.com/) - This site helped me with picking right sizes for css.
+- [What Unit](https://whatunit.com/) - This site helped me picking right sizes for css.
 
 ## Author
 
