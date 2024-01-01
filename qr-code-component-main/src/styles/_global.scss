@@ -1,0 +1,39 @@
+@use "variables.scss" as v;
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: v.$font-family;
+  font-size: v.$font-size-md;
+  font-weight: v.$font-weight-regular;
+  color: v.$font-color-main;
+  background-color: v.$bg-color-main;
+}
+
+body {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: v.$font-size-lg;
+  font-weight: v.$font-weight-bold;
+  color: v.$font-color-title;
+}
+
+p {
+  font-size: v.$font-size-md;
+}

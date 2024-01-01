@@ -1,0 +1,21 @@
+@use "variables.scss" as v;
+
+.card {
+  background: v.$bg-color-card;
+  max-width: 20rem;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  .card-head > img {
+    border-radius: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .card-title {
+    margin-bottom: 0.75rem;
+  }
+}
