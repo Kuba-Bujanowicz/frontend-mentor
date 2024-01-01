@@ -1,0 +1,14 @@
+@use "typography";
+@use "variables" as v;
+
+html {
+  font-family: v.$font-family;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
