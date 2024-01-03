@@ -1,5 +1,5 @@
 @use "typography";
-@use "variables" as v;
+@use "../abstract/variables" as v;
 
 html {
   font-family: v.$font-family;
