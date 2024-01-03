@@ -1,11 +1,24 @@
 @use "../../styles/abstract/variables" as v;
 
 .card {
+  max-width: 800px;
   background: v.$color-secondary;
   display: grid;
-  grid-template-columns: 400px 400px;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   border-radius: 2rem;
+
+  & .btn {
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    padding: 1.25rem;
+  }
+
+  &-img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .card-list-item {
