@@ -1,8 +1,14 @@
 @use "../../styles/abstract/variables" as v;
 
 .card {
-  max-width: 800px;
   background: v.$color-secondary;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 400px 400px;
+  gap: 1.5rem;
+  border-radius: 2rem;
+}
+
+.card-list-item {
+  display: flex;
+  align-items: center;
 }
