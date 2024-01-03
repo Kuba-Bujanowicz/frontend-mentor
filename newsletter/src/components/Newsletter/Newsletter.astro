@@ -5,23 +5,25 @@ import iconListImage from "../../assets/images/icon-list.svg";
 import Input from "../Input.astro";
 ---
 
-<div class="card">
-  <div class="p-lg">
-    <h1 class="bold">Stay updated!</h1>
-    <p>Join 60,000+ product managers receiving monthly updates on:</p>
-    <ul>
-      <li>
-        <span>
+<div class="card p-lg">
+  <div class="center p-lg">
+    <h1 class="mb-lg">Stay updated!</h1>
+    <p class="mb-lg">
+      Join 60,000+ product managers receiving monthly updates on:
+    </p>
+    <ul class="mb-lg">
+      <li class="card-list-item mb-md">
+        <span class="mr-md">
           <Image src={iconListImage} alt="Icon list" />
         </span>Product discovery and building what matters
       </li>
-      <li>
-        <span>
+      <li class="card-list-item mb-md">
+        <span class="mr-md">
           <Image src={iconListImage} alt="Icon list" />
         </span>Measuring to ensure updates are a success
       </li>
-      <li>
-        <span>
+      <li class="card-list-item mb-md">
+        <span class="mr-md">
           <Image src={iconListImage} alt="Icon list" />
         </span>And much more!
       </li>
@@ -29,7 +31,7 @@ import Input from "../Input.astro";
     <Input />
     <button>Subscribe to monthly newsletter</button>
   </div>
-  <div class="p-lg">
+  <div>
     <Image src={newsletterDesktopImage} alt="Sign up desktop illustration" />
   </div>
 </div>
