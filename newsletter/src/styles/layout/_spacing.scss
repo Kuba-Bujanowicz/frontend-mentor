@@ -1,0 +1,11 @@
+@use "../abstract/variables" as v;
+
+.p {
+  &-md {
+    padding: v.$md;
+  }
+
+  &-lg {
+    padding: v.$lg;
+  }
+}
