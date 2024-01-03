@@ -1,5 +1,7 @@
 @use "../abstract/variables" as v;
 
+// Padding
+
 .p {
   &-md {
     padding: v.$md;
@@ -7,5 +9,35 @@
 
   &-lg {
     padding: v.$lg;
+  }
+}
+
+// Margin
+
+.mb {
+  &-sm {
+    margin-bottom: v.$sm;
+  }
+
+  &-md {
+    margin-bottom: v.$md;
+  }
+
+  &-lg {
+    margin-bottom: v.$lg;
+  }
+}
+
+.mr {
+  &-sm {
+    margin-right: v.$sm;
+  }
+
+  &-md {
+    margin-right: v.$md;
+  }
+
+  &-lg {
+    margin-right: v.$lg;
   }
 }
