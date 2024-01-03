@@ -1,3 +1,9 @@
+// Reset styles
 @use "./base/reset";
+
+// Layout styles
 @use "./layout/spacing";
+@use "./layout/alignment";
+
+// Component styles
 @use "../components/index";
