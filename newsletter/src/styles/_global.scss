@@ -6,6 +6,12 @@ html {
   background: v.$color-primary;
 }
 
+body {
+  display: grid;
+  place-content: center;
+  height: 100svh;
+}
+
 *,
 *::after,
 *::before {
@@ -24,4 +30,8 @@ button {
   border: 0;
   background: v.$color-primary;
   color: v.$color-secondary;
+}
+
+img {
+  display: block;
 }
