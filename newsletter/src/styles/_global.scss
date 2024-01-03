@@ -3,6 +3,7 @@
 
 html {
   font-family: v.$font-family;
+  background: v.$color-primary;
 }
 
 *,
@@ -11,4 +12,16 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: v.$color-text;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  background: v.$color-primary;
+  color: v.$color-secondary;
 }
