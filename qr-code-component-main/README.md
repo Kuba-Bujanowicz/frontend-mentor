@@ -14,7 +14,7 @@
 
 - Challenges URL: [Website with challenges](https://www.frontendmentor.io)
 - Solution URL: [Solution URL](https://github.com/Kuba-Bujanowicz/frontend-mentor/tree/main/qr-code-component-main)
-- Live Site URL: [Live site URL](https://6592ce927632d6cb50eb6ef7--dulcet-pavlova-9302cd.netlify.app/)
+- Live Site URL: [Live site URL](https://mellow-kangaroo-ed9af9.netlify.app/)
 
 ## My process
 
