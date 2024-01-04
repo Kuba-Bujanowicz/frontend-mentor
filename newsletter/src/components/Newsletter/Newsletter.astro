@@ -30,11 +30,32 @@ import Form from "../Form/Form.astro";
     </ul>
     <Form />
   </div>
-  <div>
-    <Image
+  <div class="card-img-ctn">
+    <img
       class="card-img"
-      src={newsletterDesktopImage}
-      alt="Sign up desktop illustration"
+      src="/public/illustration-sign-up-desktop.svg"
+      alt="Newsletter illustration"
     />
   </div>
 </div>
+
+<script>
+  const isMobile = window.matchMedia("(max-width: 800px)").matches;
+  const newsletterImage = document.querySelector(
+    ".card-img",
+  ) as HTMLImageElement;
+  if (isMobile) {
+    newsletterImage.src = "/public/illustration-sign-up-mobile.svg";
+  } else {
+    newsletterImage.src = "/public/illustration-sign-up-desktop.svg";
+  }
+
+  window.onresize = () => {
+    const isMobile = window.matchMedia("(max-width: 800px)").matches;
+    if (isMobile) {
+      newsletterImage.src = "/public/illustration-sign-up-mobile.svg";
+    } else {
+      newsletterImage.src = "/public/illustration-sign-up-desktop.svg";
+    }
+  };
+</script>
