@@ -1,6 +1,7 @@
 @use "../../styles/abstract/variables" as v;
 
 .card {
+  font-size: 14px;
   max-width: 800px;
   background: v.$color-secondary;
   display: grid;
@@ -8,11 +9,14 @@
   gap: 1.5rem;
   border-radius: 2rem;
 
-  & .btn {
-    font-size: 0.8rem;
+  &-title {
+    font-size: 3rem;
+  }
+
+  &-btn {
     border-radius: 0.5rem;
     font-weight: 700;
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
   &-img {
