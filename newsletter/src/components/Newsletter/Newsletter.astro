@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import newsletterDesktopImage from "../../assets/images/illustration-sign-up-desktop.svg";
 import iconListImage from "../../assets/images/icon-list.svg";
-import { Input } from "../Input";
+import Form from "../Form/Form.astro";
 ---
 
 <div class="card p-lg">
@@ -28,8 +28,7 @@ import { Input } from "../Input";
         </span>And much more!
       </li>
     </ul>
-    <Input />
-    <button class="card-btn p-md">Subscribe to monthly newsletter</button>
+    <Form />
   </div>
   <div>
     <Image
