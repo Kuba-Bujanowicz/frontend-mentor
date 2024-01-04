@@ -48,4 +48,10 @@
   font-weight: 700;
   padding: 1rem;
   width: 100%;
+
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, #ff527b, #ff6a3a);
+    box-shadow: 0 10px 20px 3px rgba(#ff6a3a, 0.3);
+  }
 }
