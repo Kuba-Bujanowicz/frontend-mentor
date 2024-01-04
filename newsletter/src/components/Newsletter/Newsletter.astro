@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import iconListImage from "../../assets/images/icon-list.svg";
 import Form from "../Form/Form.astro";
+import DesktopImage from "../../assets/images/illustration-sign-up-desktop.svg";
+import MobileImage from "../../assets/images/illustration-sign-up-mobile.svg";
 ---
 
 <div class="card p-lg">
@@ -30,31 +32,15 @@ import Form from "../Form/Form.astro";
     <Form />
   </div>
   <div class="card-img-ctn">
-    <img
-      class="card-img"
-      src="/public/illustration-sign-up-desktop.svg"
+    <Image
+      class="desktop card-img"
+      src={DesktopImage}
+      alt="Newsletter illustration"
+    />
+    <Image
+      class="mobile card-img"
+      src={MobileImage}
       alt="Newsletter illustration"
     />
   </div>
 </div>
-
-<script>
-  const isMobile = window.matchMedia("(max-width: 800px)").matches;
-  const newsletterImage = document.querySelector(
-    ".card-img",
-  ) as HTMLImageElement;
-  if (isMobile) {
-    newsletterImage.src = "/public/illustration-sign-up-mobile.svg";
-  } else {
-    newsletterImage.src = "/public/illustration-sign-up-desktop.svg";
-  }
-
-  window.onresize = () => {
-    const isMobile = window.matchMedia("(max-width: 800px)").matches;
-    if (isMobile) {
-      newsletterImage.src = "/public/illustration-sign-up-mobile.svg";
-    } else {
-      newsletterImage.src = "/public/illustration-sign-up-desktop.svg";
-    }
-  };
-</script>

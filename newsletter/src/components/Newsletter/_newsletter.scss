@@ -24,7 +24,23 @@
   align-items: center;
 }
 
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
 @media (max-width: 800px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
   .card {
     grid-template-columns: 1fr;
     padding: 0;
