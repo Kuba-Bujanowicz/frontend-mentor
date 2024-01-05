@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import successIconImage from "../../assets/images/icon-success.svg";
+---
+
+<div class="card card-success p-lg">
+  <div class="center p-lg">
+    <Image class="mb-lg" src={successIconImage} alt="Icon success" />
+    <h1 class="mb-lg card-title">Thanks for subscribing!</h1>
+    <p class="mb-lg">
+      A confirmation email has been sent to ash@loremcompany.com. Please open it
+      and click the button inside to confirm your subscription.
+    </p>
+    <button class="form-btn">Dismiss message</button>
+  </div>
+</div>
