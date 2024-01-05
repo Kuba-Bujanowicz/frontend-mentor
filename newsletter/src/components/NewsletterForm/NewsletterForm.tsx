@@ -4,18 +4,33 @@ import * as v from "valibot";
 export const NewsletterForm = component$(() => {
   const email = useSignal("");
   const errorText = useSignal("");
-  const emailSchema = v.string([
-    v.minLength(1, "Please enter an email address"),
-    v.email("Please enter a valid email address"),
-  ]);
 
   const handleInput = $((e: Event) => {
     const value = (e.target as HTMLInputElement).value;
     email.value = value;
   });
 
+  const handleSubmit = $(() => {
+    errorText.value = "";
+    try {
+      const emailSchema = v.string([
+        v.minLength(1, "Please enter an email address"),
+        v.email("Please enter a valid email address"),
+      ]);
+
+      v.parse(emailSchema, email.value);
+      window.location.replace("/newsletter-success?email=" + email.value);
+    } catch (error: any) {
+      errorText.value = error.message;
+    }
+  });
+
   return (
-    <form class={"form"} method="POST">
+    <form
+      class={["form", errorText.value && "form--error"]}
+      method="POST"
+      noValidate
+    >
       <label>
         <p class="form-label mb-sm">
           Email address <span class="form-error">{errorText.value}</span>
@@ -25,10 +40,14 @@ export const NewsletterForm = component$(() => {
           class="form-input mb-lg"
           type="email"
           placeholder="email@company.com"
-          value={email.value}
         />
       </label>
-      <button class="form-btn p-md" type="submit">
+      <button
+        class="form-btn p-md"
+        type="submit"
+        onClick$={handleSubmit}
+        preventdefault:click
+      >
         Subscribe to monthly newsletter
       </button>
     </form>
