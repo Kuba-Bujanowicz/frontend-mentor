@@ -1,11 +1,42 @@
 ---
-import "../styles/styles.scss";
+// Image optimization
+import { Image } from "astro:assets";
+import successIconImage from "../assets/images/icon-success.svg";
+
+// Components
+import Button from "../components/Button";
+
+// Layouts
 import BaseLayout from "../layouts/BaseLayout.astro";
-import NewsletterSuccessMessage from "../components/NewsletterSuccessMessage/NewsletterSuccessMessage.astro";
+
+// Styles
+import "../styles/styles.scss";
+
+// Cookies
+
+let data;
+
+if (!Astro.cookies.has("data")) {
+  Astro.redirect("/");
+}
+
+data = Astro.cookies.get("data");
+
+console.log(data);
 ---
 
 <BaseLayout
   title="Frontend Mentor | Newsletter sign-up form with success message"
 >
-  <NewsletterSuccessMessage />
+  <div class="card card-success p-lg">
+    <div class="center p-lg">
+      <Image class="mb-lg" src={successIconImage} alt="Icon success" />
+      <h1 class="mb-lg card-title">Thanks for subscribing!</h1>
+      <p class="mb-lg">
+        A confirmation email has been sent to {data}. Please open it and click
+        the button inside to confirm your subscription.
+      </p>
+      <Button class="btn text-center" href="/">Dismiss message</Button>
+    </div>
+  </div>
 </BaseLayout>

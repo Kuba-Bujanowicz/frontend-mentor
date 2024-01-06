@@ -1,11 +1,52 @@
 ---
 import "../styles/styles.scss";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Newsletter from "../components/Newsletter/Newsletter.astro";
+import Form from "../components/Form.astro";
+import { Image } from "astro:assets";
+import iconListImage from "../assets/images/icon-list.svg";
+import DesktopImage from "../assets/images/illustration-sign-up-desktop.svg";
+import MobileImage from "../assets/images/illustration-sign-up-mobile.svg";
 ---
 
 <BaseLayout
   title="Frontend Mentor | Newsletter sign-up form with success message"
 >
-  <Newsletter />
+  <div class="card p-lg">
+    <div class="center p-lg">
+      <h1 class="mb-lg card-title">Stay updated!</h1>
+      <p class="mb-lg">
+        Join 60,000+ product managers receiving monthly updates on:
+      </p>
+      <ul class="mb-lg">
+        <li class="card-list-item mb-md">
+          <span class="mr-md">
+            <Image src={iconListImage} alt="Icon list" />
+          </span>Product discovery and building what matters
+        </li>
+        <li class="card-list-item mb-md">
+          <span class="mr-md">
+            <Image src={iconListImage} alt="Icon list" />
+          </span>Measuring to ensure updates are a success
+        </li>
+        <li class="card-list-item mb-md">
+          <span class="mr-md">
+            <Image src={iconListImage} alt="Icon list" />
+          </span>And much more!
+        </li>
+      </ul>
+      <Form />
+    </div>
+    <div class="card-img-ctn">
+      <Image
+        class="desktop card-img"
+        src={DesktopImage}
+        alt="Newsletter illustration"
+      />
+      <Image
+        class="mobile card-img"
+        src={MobileImage}
+        alt="Newsletter illustration"
+      />
+    </div>
+  </div>
 </BaseLayout>
