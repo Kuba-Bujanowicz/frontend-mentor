@@ -1,0 +1,51 @@
+@use "../../styles/abstract/variables" as v;
+
+.card {
+  font-size: 14px;
+  max-width: 800px;
+  background: v.$color-secondary;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  border-radius: 2rem;
+
+  &-success {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    font-size: 12px;
+    line-height: 1.5;
+
+    .card-title {
+      line-height: 1;
+    }
+  }
+
+  &-title {
+    font-size: 3rem;
+  }
+
+  &-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.card-list-item {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .card {
+    grid-template-columns: 1fr;
+    padding: 0;
+
+    &-title {
+      font-size: 2.25rem;
+    }
+
+    &-img-ctn {
+      order: -1;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use "../abstract/variables" as v;
+
+.input {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: calc(1rem - 1px);
+  color: v.$color-text;
+  border: 1px solid v.$color-text;
+  opacity: 0.3;
+
+  &-label {
+    font-weight: v.$font-weight-bold;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-error {
+    color: v.$color-error;
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+
+  &:not(:placeholder-shown) {
+    opacity: 1;
+  }
+}
+
+.input--error {
+  color: v.$color-error;
+  opacity: 1;
+  border-color: v.$color-error;
+  background-color: rgba(v.$color-error, 0.1);
+
+  & ~ .input-label > .input-error {
+    color: v.$color-error;
+  }
+}
