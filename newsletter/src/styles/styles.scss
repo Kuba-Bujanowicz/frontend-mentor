@@ -5,5 +5,7 @@
 @use "./layout/spacing";
 @use "./layout/alignment";
 
-// Component styles
-@use "../components/index";
+// Components styles
+@use "./components/card";
+@use "./components/button";
+@use "./components/input";
