@@ -22,15 +22,13 @@ body {
   color: v.$color-text;
 }
 
+a {
+  text-decoration: none;
+}
+
 ul,
 ol {
   list-style: none;
-}
-
-button {
-  border: 0;
-  background: v.$color-primary;
-  color: v.$color-secondary;
 }
 
 img {
