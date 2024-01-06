@@ -1,0 +1,30 @@
+---
+import Button from "./Button";
+import Input from "./Input";
+
+let error;
+let data;
+
+if (Astro.cookies.has("error")) {
+  error = Astro.cookies.get("error");
+
+  Astro.cookies.delete("error");
+}
+
+if (Astro.cookies.has("data")) {
+  data = Astro.cookies.get("data");
+
+  Astro.cookies.delete("data");
+}
+---
+
+<form class="form" method="POST" action="/newsletter" novalidate>
+  <Input
+    type="email"
+    name="email"
+    label="Email address"
+    placeholder="email@company.com"
+    errorText={error?.value}
+  />
+  <Button class="btn">Subscribe to monthly newsletter</Button>
+</form>
