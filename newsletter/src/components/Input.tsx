@@ -12,7 +12,7 @@ interface InputProps {
 export default component$<InputProps>(
   ({ errorText, label, placeholder, type, name, value }) => {
     return (
-      <label>
+      <label class={["input", errorText && "input--error"]}>
         <p class="input-label mb-sm">
           {label} <span class="input-error">{errorText}</span>
         </p>
@@ -21,7 +21,7 @@ export default component$<InputProps>(
           value={value}
           name={name}
           placeholder={placeholder}
-          class={["input mb-lg", errorText && "input--error"]}
+          class="input-element mb-lg"
         />
       </label>
     );
