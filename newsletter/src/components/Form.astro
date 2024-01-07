@@ -2,26 +2,22 @@
 import Button from "./Button";
 import Input from "./Input";
 
-const error = Astro.cookies.get("error");
-const data = Astro.cookies.get("data");
-
-if (Astro.cookies.has("error")) {
-  Astro.cookies.delete("error");
+interface Props {
+  data: string;
+  error: string;
 }
 
-if (Astro.cookies.has("data")) {
-  Astro.cookies.delete("data");
-}
+const { data, error } = Astro.props;
 ---
 
 <form class="form" method="POST" action="/newsletter" novalidate>
   <Input
     type="email"
     name="email"
-    value={data?.value}
+    value={data}
     label="Email address"
     placeholder="email@company.com"
-    errorText={error?.value}
+    errorText={error}
   />
   <Button class="btn">Subscribe to monthly newsletter</Button>
 </form>

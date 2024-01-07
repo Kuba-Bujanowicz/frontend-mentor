@@ -6,6 +6,17 @@ import { Image } from "astro:assets";
 import iconListImage from "../assets/images/icon-list.svg";
 import DesktopImage from "../assets/images/illustration-sign-up-desktop.svg";
 import MobileImage from "../assets/images/illustration-sign-up-mobile.svg";
+
+const error = Astro.cookies.get("error")?.value || "";
+const data = Astro.cookies.get("data")?.value || "";
+
+if (error) {
+  Astro.cookies.delete("error");
+}
+
+if (data) {
+  Astro.cookies.delete("data");
+}
 ---
 
 <BaseLayout
@@ -34,7 +45,7 @@ import MobileImage from "../assets/images/illustration-sign-up-mobile.svg";
           </span>And much more!
         </li>
       </ul>
-      <Form />
+      <Form data={data} error={error} />
     </div>
     <div class="card-img-ctn">
       <Image
