@@ -14,15 +14,11 @@ import "../styles/styles.scss";
 
 // Cookies
 
-let data;
+const data = Astro.cookies.get("data")?.value || "";
 
-if (!Astro.cookies.has("data")) {
-  Astro.redirect("/");
+if (data) {
+  Astro.cookies.delete("data");
 }
-
-data = Astro.cookies.get("data");
-
-console.log(data);
 ---
 
 <BaseLayout
