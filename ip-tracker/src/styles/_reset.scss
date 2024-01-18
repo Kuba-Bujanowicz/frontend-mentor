@@ -9,3 +9,8 @@
   margin: 0;
   font-family: v.$font-family;
 }
+
+html,
+body {
+  min-height: 100svh;
+}
