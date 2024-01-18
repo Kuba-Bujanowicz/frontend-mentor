@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+}
+
+.center {
+  place-content: center;
+}
+
+.m {
+  &b-sm {
+    margin-bottom: 2rem;
+  }
+}
+
+.p {
+  &-sm {
+    padding: 1rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
