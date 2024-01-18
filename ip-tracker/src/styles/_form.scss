@@ -1,0 +1,23 @@
+@use "variables" as v;
+
+.form {
+  position: relative;
+  width: min(100%, 500px);
+  margin: auto;
+
+  &-input {
+    padding: 1rem;
+    width: 100%;
+    border-radius: 0.75rem;
+  }
+
+  &-btn {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 0rem 0.75rem 0.75rem 0;
+    border: 0;
+    background-color: v.$dark-grey;
+  }
+}
