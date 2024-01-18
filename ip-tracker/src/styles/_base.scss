@@ -1,7 +1,7 @@
 @use "variables" as v;
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: v.$font-weight-bold;
 }
 
@@ -17,4 +17,12 @@ p {
   &.bold {
     font-weight: v.$font-weight-bold;
   }
+}
+
+input {
+  border: 0;
+}
+
+.text-alt {
+  color: v.$white;
 }
