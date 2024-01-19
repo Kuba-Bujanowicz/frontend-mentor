@@ -13,16 +13,8 @@ h2 {
 p {
   font-size: 1.125rem;
   font-weight: v.$font-weight-normal;
-
-  &.bold {
-    font-weight: v.$font-weight-bold;
-  }
 }
 
 input {
   border: 0;
-}
-
-.text-alt {
-  color: v.$white;
 }
