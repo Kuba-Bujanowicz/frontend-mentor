@@ -1,0 +1,37 @@
+@use "variables" as v;
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-alt {
+  color: v.$white;
+}
+
+.text-secondary {
+  color: v.$grey;
+}
+
+.bold {
+  font-weight: v.$font-weight-bold;
+}
+
+.bolder {
+  font-weight: v.$font-weight-bolder;
+}
+
+.text-sm {
+  font-size: 0.7rem;
+}
+
+.text-lg {
+  font-size: 1.5rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
