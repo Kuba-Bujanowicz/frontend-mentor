@@ -5,9 +5,37 @@ import iconArrow from "../assets/icon-arrow.svg";
 ---
 
 <BaseLayout title="IP Address Tracker">
-  <header class="grid text-center">
-    <h1 class="mb-lg text-alt">IP Address Tracker</h1>
+  <header class="grid items-center px-sm">
+    <h1 class="text-alt">IP Address Tracker</h1>
     <form action="" novalidate class="form">
+      <input
+        class="form-input p-sm"
+        type="text"
+        placeholder="Search for any IP address or domain"
+      />
+      <button class="form-btn btn" type="submit">
+        <Image src={iconArrow} alt="icon of an arrow" />
+      </button>
+    </form>
+  </header>
+  <div class="details text-left translateY--50 px-sm">
+    <div class="details-wrapper">
+      <p class="text-sm uppercase bolder text-secondary mb-md">IP Address</p>
+      <p class="bold text-lg">198.15.0.256</p>
+    </div>
+    <div class="details-wrapper">
+      <p class="text-sm uppercase bolder text-secondary mb-md">Location</p>
+      <p class="bold text-lg">Brooklyn, NY 10001</p>
+    </div>
+    <div class="details-wrapper">
+      <p class="text-sm uppercase bolder text-secondary mb-md">Timezone</p>
+      <p class="bold text-lg">UTC -05:00</p>
+    </div>
+    <div class="details-wrapper">
+      <p class="text-sm uppercase bolder text-secondary mb-md">ISP</p>
+      <p class="bold text-lg">SpaceX Starlink</p>
+    </div>
+    <!-- <form action="" novalidate class="form mb-lg">
       <input
         class="form-input"
         type="text"
@@ -34,8 +62,8 @@ import iconArrow from "../assets/icon-arrow.svg";
         <p class="text-sm uppercase bolder text-secondary mb-md">ISP</p>
         <p class="bold text-lg">SpaceX Starlink</p>
       </div>
-    </div>
-  </header>
+    </div> -->
+  </div>
   <main>
     <section class="map">
       <div id="map"></div>

@@ -14,9 +14,13 @@ $font-size-base: 16px;
 $font-weight-normal: 400;
 $font-weight-bold: 500;
 $font-weight-bolder: 700;
-// - Font size (text input): 18px
 
-// ### Font
+// ## Shadows
 
-// - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
-// - Weights: 400, 500, 700
+$shadow:
+  rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+  rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+// ## Radius
+
+$radius: 0.75rem;

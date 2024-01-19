@@ -2,8 +2,28 @@
   display: grid;
 }
 
-.center {
+.content-center {
   place-content: center;
+}
+
+.items-center {
+  place-items: center;
+}
+
+.z--1 {
+  z-index: -1;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.translateY-50 {
+  transform: translateY(50%);
+}
+
+.translateY--50 {
+  transform: translateY(-50%);
 }
 
 .m {
@@ -19,5 +39,13 @@
 .p {
   &-sm {
     padding: 1rem;
+  }
+
+  &t-sm {
+    padding-top: 1rem;
+  }
+
+  &x-sm {
+    padding-inline: 1rem;
   }
 }

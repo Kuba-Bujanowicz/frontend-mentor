@@ -1,33 +1,20 @@
 @use "variables" as v;
 
-body {
-  grid-template-rows: 1fr 2fr;
-}
-
 header {
-  background-image: url("../assets/pattern-bg-desktop.png");
+  background: url("../assets/pattern-bg-desktop.png") no-repeat center;
   background-size: cover;
-  background-position: center;
-  grid-template-columns: minmax(0, 1000px);
-  justify-content: center;
-  justify-items: center;
-  align-content: end;
-  padding-inline: 2.5rem;
-  padding-top: 5rem;
+  padding-bottom: 7rem;
 }
 
 .details {
-  width: 100%;
+  max-width: 1000px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background-color: v.$white;
   padding-block: 2.5rem;
-  border-radius: 0.75rem;
-  box-shadow:
-    rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  translate: 0 50%;
+  border-radius: v.$radius;
+  box-shadow: v.$shadow;
 }
 
 .details-wrapper {
@@ -47,8 +34,8 @@ header {
 }
 
 @media (max-width: 900px) {
-  body {
-    grid-template-rows: 1fr 2fr;
+  header {
+    padding-bottom: 13rem;
   }
 
   .details {
