@@ -1,10 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Map } from "../components/Map";
-import iconArrow from "../assets/icon-arrow.svg";
-
-export const prerender = false;
 
 let data = await getGeoData("");
 
@@ -48,7 +44,7 @@ if (Astro.request.method === "POST") {
         placeholder="Search for any IP address or domain"
       />
       <button class="form-btn btn" type="submit">
-        <Image src={iconArrow} alt="icon of an arrow" />
+        <img src="/icon-arrow.svg" alt="icon of an arrow" />
       </button>
     </form>
     <div class="details text-left translateY-50 z-1">
