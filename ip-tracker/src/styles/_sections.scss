@@ -1,9 +1,17 @@
 @use "variables" as v;
 
+body {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+main {
+  grid-row: 2 / 4;
+}
+
 header {
   background: url("../assets/pattern-bg-desktop.png") no-repeat center;
   background-size: cover;
-  padding-top: 2rem;
 }
 
 .details {
