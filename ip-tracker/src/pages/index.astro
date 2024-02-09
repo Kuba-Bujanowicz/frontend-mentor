@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Map } from "../components/Map";
 
-let data = await getGeoData("127.0.0.1");
+let data = await getGeoData("");
 
 async function getGeoData(ip?: FormDataEntryValue | null) {
   const API_KEY = import.meta.env.IPIFY_API_KEY;
