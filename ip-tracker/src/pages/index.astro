@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Map } from "../components/Map";
 import iconArrow from "../assets/icon-arrow.svg";
 ---
 
@@ -38,8 +39,6 @@ import iconArrow from "../assets/icon-arrow.svg";
   </header>
 
   <main>
-    <section class="map">
-      <div id="map"></div>
-    </section>
+    <Map />
   </main>
 </BaseLayout>
