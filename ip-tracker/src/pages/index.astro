@@ -3,42 +3,73 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Map } from "../components/Map";
 import iconArrow from "../assets/icon-arrow.svg";
+
+let data = await getGeoData("");
+
+async function getGeoData(ip?: FormDataEntryValue | null) {
+  const API_KEY = import.meta.env.IPIFY_API_KEY;
+  const URL = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`;
+  const response = await fetch(URL);
+  const resData = await response.json();
+
+  return {
+    ip: resData.ip,
+    location: `${resData.location.city}, ${resData.location.region} ${resData.location.postalCode}`,
+    timezone: `UTC ${resData.location.timezone}`,
+    isp: resData.isp,
+    lat: resData.location.lat,
+    lng: resData.location.lng,
+  };
+}
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const ip = formData.get("ip");
+    data = await getGeoData(ip);
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
 <BaseLayout title="IP Address Tracker">
   <header class="grid items-center px-sm">
     <h1 class="text-alt p-sm">IP Address Tracker</h1>
-    <form action="" novalidate class="form">
+    <form novalidate class="form" method="post">
       <input
         class="form-input p-sm"
         type="text"
+        name="ip"
         placeholder="Search for any IP address or domain"
       />
       <button class="form-btn btn" type="submit">
         <Image src={iconArrow} alt="icon of an arrow" />
       </button>
     </form>
-    <div class="details text-left translateY-50">
+    <div class="details text-left translateY-50 z-1">
       <div class="details-wrapper">
         <p class="text-sm uppercase bolder text-secondary mb-md">IP Address</p>
-        <p class="bold text-lg">198.15.0.256</p>
+        <p class="bold text-lg">{data.ip}</p>
       </div>
       <div class="details-wrapper">
         <p class="text-sm uppercase bolder text-secondary mb-md">Location</p>
-        <p class="bold text-lg">Brooklyn, NY 10001</p>
+        <p class="bold text-lg">{data.location}</p>
       </div>
       <div class="details-wrapper">
         <p class="text-sm uppercase bolder text-secondary mb-md">Timezone</p>
-        <p class="bold text-lg">UTC -05:00</p>
+        <p class="bold text-lg">{data.timezone}</p>
       </div>
       <div class="details-wrapper">
         <p class="text-sm uppercase bolder text-secondary mb-md">ISP</p>
-        <p class="bold text-lg">SpaceX Starlink</p>
+        <p class="bold text-lg">{data.isp}</p>
       </div>
     </div>
   </header>
 
   <main>
-    <Map />
+    <Map lat={data.lat} lng={data.lng} />
   </main>
 </BaseLayout>
