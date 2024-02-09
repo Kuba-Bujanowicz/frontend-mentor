@@ -17,5 +17,10 @@
     aspect-ratio: 1;
     border-radius: 0rem v.$radius v.$radius 0;
     background-color: v.$dark-grey;
+
+    &:hover {
+      filter: brightness(1.2);
+      cursor: pointer;
+    }
   }
 }
