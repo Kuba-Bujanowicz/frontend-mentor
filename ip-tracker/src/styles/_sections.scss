@@ -3,7 +3,7 @@
 header {
   background: url("../assets/pattern-bg-desktop.png") no-repeat center;
   background-size: cover;
-  padding-bottom: 7rem;
+  padding-top: 2rem;
 }
 
 .details {
@@ -34,12 +34,10 @@ header {
 }
 
 @media (max-width: 900px) {
-  header {
-    padding-bottom: 13rem;
-  }
-
   .details {
     grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: -9rem;
   }
 
   .details-wrapper {
